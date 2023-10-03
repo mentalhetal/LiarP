@@ -15,17 +15,17 @@ namespace StarterAssets
     public class ThirdPersonController : MonoBehaviour
     {
         [Header("Player")]
-        [Tooltip("Move speed of the character in m/s")]
+        [Tooltip("플레이어 기본 이동속도")]
         public float MoveSpeed = 2.0f;
 
-        [Tooltip("Sprint speed of the character in m/s")]
+        [Tooltip("플레이어 달리기 이동속도")]
         public float SprintSpeed = 5.335f;
 
-        [Tooltip("How fast the character turns to face movement direction")]
+        [Tooltip("플레이어 이동 방향으로 움직일 때 부드럽게 전환되는 속도")]
         [Range(0.0f, 0.3f)]
         public float RotationSmoothTime = 0.12f;
 
-        [Tooltip("Acceleration and deceleration")]
+        [Tooltip("가속과 감속")]
         public float SpeedChangeRate = 10.0f;
 
         public AudioClip LandingAudioClip;
@@ -33,30 +33,30 @@ namespace StarterAssets
         [Range(0, 1)] public float FootstepAudioVolume = 0.5f;
 
         [Space(10)]
-        [Tooltip("The height the player can jump")]
+        [Tooltip("플레이어가 점프할 수 있는 높이")]
         public float JumpHeight = 1.2f;
 
-        [Tooltip("The character uses its own gravity value. The engine default is -9.81f")]
+        [Tooltip("플레이어 고유 중력값 설정")]
         public float Gravity = -15.0f;
 
         [Space(10)]
-        [Tooltip("Time required to pass before being able to jump again. Set to 0f to instantly jump again")]
+        [Tooltip("점프 쿨타임")]
         public float JumpTimeout = 0.50f;
 
-        [Tooltip("Time required to pass before entering the fall state. Useful for walking down stairs")]
+        [Tooltip("하강 상태에 진입하기 전에 경과해야 하는 시간 설정")]
         public float FallTimeout = 0.15f;
 
-        [Header("Player Grounded")]
+        [Header("플레이어와 Grounded에 닿는 여부 설정")]
         [Tooltip("If the character is grounded or not. Not part of the CharacterController built in grounded check")]
         public bool Grounded = true;
 
-        [Tooltip("Useful for rough ground")]
+        [Tooltip("Grounded 오프셋")]
         public float GroundedOffset = -0.14f;
 
-        [Tooltip("The radius of the grounded check. Should match the radius of the CharacterController")]
+        [Tooltip("The radius of the grounded check. CharacterController의 반지름과 일치해야합니다.")]
         public float GroundedRadius = 0.28f;
 
-        [Tooltip("What layers the character uses as ground")]
+        [Tooltip("플레이어가 땅에 닿는 것에 사용하는 레이어")]
         public LayerMask GroundLayers;
 
         [Header("Cinemachine")]
